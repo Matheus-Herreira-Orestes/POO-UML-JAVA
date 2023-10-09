@@ -72,6 +72,8 @@ public class Telefone {
                 if (atendeu){
                     System.out.println("Ligação Atendida");
                 } else {
+                    System.out.println("Não Atendeu");
+                    System.out.println("Caixa postal");
                     Scanner scanner = new Scanner(System.in);
                     System.out.println("Deixe a sua mensagem: ");
                     String mensagem = scanner.nextLine();
@@ -123,16 +125,6 @@ public class Telefone {
 
         public static void main(String[] args) {
 
-            Telefone telefone = new Telefone();
-            telefone.adiciocarContato(1L, "Pietra", 123456789);
-            telefone.adiciocarContato(2L, "Matheus", 987654321);
-            telefone.exibirContatos();
-            telefone.selecionarContato("Matheus");
-            telefone.call();
-            telefone.listarCaixaPostal();
-            telefone.selecionarContato("Pietra");
-            telefone.call();
-            telefone.listarCaixaPostal();
-            telefone.receberChamadaDeContatoAleatorio();
+
         }
 }

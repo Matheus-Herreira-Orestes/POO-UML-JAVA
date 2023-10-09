@@ -3,7 +3,7 @@ package ReprodutorMusical;
 
 import java.util.HashMap;
 import java.util.Map;
-import LigaDesliga.LigaDesliga;
+
 
 public class ReprodutorMusical {
 
@@ -71,26 +71,7 @@ public class ReprodutorMusical {
 
 
     public static void main(String[] args) {
-        ReprodutorMusical listaMusica = new ReprodutorMusical ();
 
-        LigaDesliga ligaDesliga = new LigaDesliga();
-
-        ligaDesliga.ligar();
-
-        if (ligaDesliga.ligado) {
-            listaMusica.adicionarMusica(1L, "Love Story", "Taylor Swift");
-            listaMusica.adicionarMusica(2L, "Blank Space", "Taylor Swift");
-            listaMusica.adicionarMusica(3L, "ET", "Katy Perry");
-
-            listaMusica.exibirPlaylist();
-
-            listaMusica.selecionarMusica("Blank Space");
-
-            listaMusica.tocarMusica();
-
-            listaMusica.pausarMusica();
-
-        }
 
     }
 }

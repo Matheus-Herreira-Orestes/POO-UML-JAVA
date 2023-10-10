@@ -28,9 +28,20 @@ public class Telefone {
             contatosMap.put(id, new Contato(nome,telefone));
         }
 
-        public void removerContato(String nome){
+         public Long pegarIdPorNome(String nome) {
+            for (Map.Entry<Long, Contato> entry : contatosMap.entrySet()) {
+                if (entry.getValue().getNome().equals(nome)) {
+                     return entry.getKey();
+                }
+            }
+            return null;
+         }
+
+
+    public void removerContato(String nome){
+            Long idPeloNome = pegarIdPorNome(nome);
             if (!contatosMap.isEmpty()){
-                contatosMap.remove(nome);
+                contatosMap.remove(idPeloNome);
             }
         }
 

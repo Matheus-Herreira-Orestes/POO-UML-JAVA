@@ -25,6 +25,23 @@ public class NavegadorDeInternet {
         paginaAtual = pagina;
     }
 
+    public void fecharAba(String pagina) {
+        if (abasAbertas.contains(pagina)) {
+            abasAbertas.remove(pagina);
+            if (pagina.equals(paginaAtual)) {
+                if (!abasAbertas.isEmpty()) {
+                    paginaAtual = abasAbertas.get(0);
+                } else {
+                    paginaAtual = null;
+                }
+            }
+            System.out.println("Aba fechada: " + pagina);
+        } else {
+            System.out.println("Aba não encontrada: " + pagina);
+        }
+    }
+
+
     public void atualizarPagina() {
         if (paginaAtual != null) {
             System.out.println("Atualizando página: " + paginaAtual);

@@ -3,8 +3,6 @@ import NavegadorDeInternet.NavegadorDeInternet;
 import ReprodutorMusical.ReprodutorMusical;
 import Telefone.Telefone;
 
-import java.sql.SQLOutput;
-
 public class Iphone {
 
     public static void main(String[] args) {
@@ -19,7 +17,11 @@ public class Iphone {
 
             telefone.adiciocarContato(1L, "Pietra", 123456789);
             telefone.adiciocarContato(2L, "Matheus", 987654321);
+            telefone.adiciocarContato(3L, "Ana", 567891431);
 
+            telefone.exibirContatos();
+
+            telefone.removerContato("Ana");
             telefone.exibirContatos();
 
             telefone.selecionarContato("Matheus");
@@ -44,6 +46,15 @@ public class Iphone {
             navegador.adicionarNovaAba("www.youtube.com");
             navegador.exibirPagina();
 
+            navegador.adicionarNovaAba("www.netflix.com");
+            navegador.exibirPagina();
+
+            navegador.exibirAbas();
+
+            navegador.fecharAba("www.netflix.com");
+            navegador.exibirPagina();
+            navegador.exibirAbas();
+
             navegador.exibirAbas();
 
             System.out.println("------------------------------");
@@ -59,6 +70,11 @@ public class Iphone {
             listaMusica.tocarMusica();
 
             listaMusica.pausarMusica();
+
+            listaMusica.removerMusica("Blank Space");
+            listaMusica.tocarMusica();
+
+            listaMusica.exibirPlaylist();
 
             System.out.println("------------------------------");
 

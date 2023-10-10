@@ -1,6 +1,8 @@
 package ReprodutorMusical;
 
 
+import Telefone.Contato;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,11 +25,30 @@ public class ReprodutorMusical {
         listaMusica.put(id, new Musica(nome,cantor));
     }
 
-    public void removerMusica(String nome){
-        if (!listaMusica.isEmpty()){
-           listaMusica.remove(nome);
-       }
+    public Long pegarIdPorNome(String nome) {
+        for (Map.Entry<Long, Musica> entry : listaMusica.entrySet()) {
+            if (entry.getValue().getNome().equals(nome)) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
+
+    public void removerMusica(String nome) {
+        Long idPorNome = pegarIdPorNome(nome);
+        if (idPorNome != null) {
+            listaMusica.remove(idPorNome);
+
+            if (musicaSelecionada != null && musicaSelecionada.getNome().equals(nome)) {
+                musicaSelecionada = null;
+                tocando = false;
+            }
+            System.out.println("Música removida: " + nome);
+        } else {
+            System.out.println("Música não encontrada: " + nome);
+        }
+    }
+
 
     public void exibirPlaylist(){
         System.out.println(listaMusica);
@@ -57,6 +78,8 @@ public class ReprodutorMusical {
                 System.out.println("Tocando " + musicaSelecionada);
                 tocando = true;
             }
+        } else{
+            System.out.println("Selecione uma musica");
         }
     }
 

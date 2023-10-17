@@ -8,8 +8,6 @@ public class Telefone {
         private Map<Long, Contato> contatosMap;
         private Random random;
 
-        private List<String> caixaPostal;
-
 
     public Telefone(){
             this.contatosMap = new HashMap<>();
@@ -50,14 +48,6 @@ public class Telefone {
             System.out.println(contatosMap);
         }
 
-        public Contato pesquisarPorNome(String nome){
-            Contato numeroPorNome = null;
-            if (!contatosMap.isEmpty()){
-                numeroPorNome = contatosMap.get(nome);
-            }
-
-            return numeroPorNome;
-        }
 
         public Contato selecionarContato(String nome){
             if (!contatosMap.isEmpty()){
@@ -131,11 +121,4 @@ public class Telefone {
         }
     }
 
-
-
-
-        public static void main(String[] args) {
-
-
-        }
 }

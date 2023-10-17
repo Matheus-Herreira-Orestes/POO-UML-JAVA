@@ -54,7 +54,4 @@ public class NavegadorDeInternet {
         System.out.println(abasAbertas);
     }
 
-    public static void main(String[] args) {
-
-    }
 }
